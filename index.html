@@ -31,6 +31,18 @@
 <script type='text/javascript' src='common/js/layerslider.transitions.js'></script>
 <script type='text/javascript' src='common/js/nav.js'></script>
 <script type='text/javascript' src='common/js/home.js'></script>
+	<script>
+  (function() {
+    // 접속 기기(User-Agent) 확인
+    var userAgent = navigator.userAgent || navigator.vendor || window.opera;
+    var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(userAgent);
+    
+    // 모바일 접속이면서 현재 주소에 '/m/' 경로가 없는 경우 이동
+    if (isMobile && location.pathname.indexOf('/m/') !== 0) {
+      location.href = 'https://saram.8222quick.com/m/';
+    }
+  })();
+</script>
 </head>
 <style>
 
